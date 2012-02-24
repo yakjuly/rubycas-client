@@ -43,8 +43,8 @@ module CASClient
       @ticket_store_class = case conf[:ticket_store]
         when :local_dir_ticket_store, nil
           CASClient::Tickets::Storage::LocalDirTicketStore
-        when :active_record_ticket_store
-          ::ACTIVE_RECORD_TICKET_STORE
+        # when :active_record_ticket_store
+        #   ::ACTIVE_RECORD_TICKET_STORE
         else
           conf[:ticket_store]
       end
